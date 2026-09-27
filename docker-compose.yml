@@ -1,0 +1,21 @@
+services:
+  wiki:
+    build: .
+    container_name: llm-atomic-wiki
+    volumes:
+      # 整个知识库挂到 /repo，容器内的修改直接落在宿主仓库
+      - ${REPO_HOST_DIR}:/repo
+      # raw/ 以只读方式再挂一层，从文件系统层面兜底 CLAUDE.md/AGENTS.md 的
+      # 「raw/ 只读」规则（更精确的挂载会覆盖上面的整仓挂载）
+      - ${REPO_HOST_DIR}/raw:/repo/raw:ro
+      - ${OPENCODE_CONF}:/root/.config/opencode/opencode.json:ro
+      - ${OPENCODE_AUTH}:/root/.local/share/opencode/auth.json
+      - opencode-data:/root/.local/share/opencode/storage
+    working_dir: /repo
+    # command: opencode serve --hostname 0.0.0.0 --port 4099
+    command: opencode web --hostname 0.0.0.0 --port 4099
+    ports:
+      - "4099:4099"
+
+volumes:
+  opencode-data:

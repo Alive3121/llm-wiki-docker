@@ -1,0 +1,38 @@
+# ─── Personal content (the whole point of this repo is the framework, not your content) ───
+
+# Raw source materials
+raw/*
+!raw/README.md
+!raw/.gitkeep
+
+# Atoms — all topic-branches and their contents are yours, not for the public repo
+atoms/*
+!atoms/README.md
+!atoms/_template.md
+!atoms/.gitkeep
+
+# Compiled wiki pages
+wiki/*
+!wiki/_template.md
+!wiki/.gitkeep
+
+# Auto-generated artifacts
+index.md
+log.md
+lint-report.md
+
+# Personal notes / analysis (not for the public repo)
+GAP-ANALYSIS.md
+
+# ─── Python / OS / editor noise ───
+Python/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+.obsidian/
