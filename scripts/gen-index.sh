@@ -14,7 +14,13 @@ INDEX="$WIKI_DIR/../index.md"
 #
 # Keep empty by default to auto-discover branch prefixes in this repo.
 # If you need a fixed order, populate this array with "prefix|Display Name" entries.
-declare -a BRANCHES=()
+# Recipe branches contain hyphens, so auto-discovery (split at first hyphen) can't be used.
+declare -a BRANCHES=(
+  "home-cooking|Home Cooking 家常菜"
+  "baking|Baking 烘焙"
+  "staples|Staples 主食面点"
+  "desserts-drinks|Desserts & Drinks 甜品饮品"
+)
 
 # ─── Auto-discover branches if not overridden ───
 if [ ${#BRANCHES[@]} -eq 0 ]; then

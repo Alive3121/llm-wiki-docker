@@ -5,21 +5,8 @@ raw/*
 !raw/README.md
 !raw/.gitkeep
 
-# Atoms — all topic-branches and their contents are yours, not for the public repo
-atoms/*
-!atoms/README.md
-!atoms/_template.md
-!atoms/.gitkeep
-
-# Compiled wiki pages
-wiki/*
-!wiki/_template.md
-!wiki/.gitkeep
-
-# Auto-generated artifacts
-index.md
-log.md
-lint-report.md
+# atoms/, wiki/, index.md, log.md, lint-report.md are tracked on this branch
+# (recipe knowledge base generated from raw/recipe_corpus_full.json).
 
 # Personal notes / analysis (not for the public repo)
 GAP-ANALYSIS.md
